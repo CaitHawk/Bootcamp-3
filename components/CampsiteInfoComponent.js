@@ -10,7 +10,7 @@ const mapStateToProps = state => {
     return {
         campsites: state.campsites,
         comments: state.comments,
-        favorites: state.favories,
+        favorites: state.favorites,
     };
 };
 
