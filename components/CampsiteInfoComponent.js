@@ -3,8 +3,7 @@ import { Text, View, ScrollView, FlatList, Modal, Button, StyleSheet } from 'rea
 import { Card, Icon, Rating, Input } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
-import { postFavorite } from '../redux/ActionCreators';
-import { postComment } from '../redux/ActionCreators';
+import { postFavorite, postComment } from '../redux/ActionCreators';
 
 
 const mapStateToProps = state => {
@@ -16,8 +15,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-    postFavorite: campsiteId => (postFavorite(campsiteId)),
-    postComment: (campsiteId, rating, author, text) => (postComment(campsiteId, rating, author, text))
+    postFavorite: campsiteId => postFavorite(campsiteId),
+    postComment: (campsiteId, rating, author, text) => postComment(campsiteId, rating, author, text)
 };
 
 
@@ -44,7 +43,7 @@ function RenderCampsite(props) {
                             console.log('Already set as a favorite') : props.markFavorite()}
                     />
                     <Icon
-                        name='pencil'
+                        name={'pencil'}
                         type='font-awesome'
                         color='#5637DD'
                         raised
@@ -100,7 +99,7 @@ class CampsiteInfo extends Component {
     }
 
     handleComment(campsiteId) {
-        postComment(campsiteId, this.state.rating, this.state.author, this.state.text);
+        this.props.postComment(campsiteId, this.state.rating, this.state.author, this.state.text);
         this.toggleModal();
     }
 
@@ -202,6 +201,7 @@ const styles = StyleSheet.create({
     cardRow: {
         alignItems: 'center',
         justifyContent: 'center',
+        flex: 1,
         flexDirection: 'row',
         margin: 20
     },

@@ -4,6 +4,7 @@ export const CAMPSITES_FAILED = 'CAMPSITES_FAILED';
 
 export const ADD_COMMENTS = 'ADD_COMMENTS';
 export const COMMENTS_FAILED = 'COMMENTS_FAILED';
+export const ADD_COMMENT = 'ADD_COMMENT';
 
 export const PROMOTIONS_LOADING = 'PROMOTIONS_LOADING';
 export const ADD_PROMOTIONS = 'ADD_PROMOTIONS';
@@ -16,5 +17,3 @@ export const PARTNERS_FAILED = 'PARTNERS_FAILED';
 export const ADD_FAVORITE = 'ADD_FAVORITE';
 
 
-//week 2 workshop below
-export const ADD_COMMENT = 'ADD_COMMENT';
